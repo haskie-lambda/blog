@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <style disabled>
+body {
+  max-width: 500px;
+  margin: auto;
+  margin-top: 2em;
+  padding: 1em;
+  text-align: justify;
+}
+h1 h2 h3 h4 {
+  font-family: courier;
+}
+    </style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Emotional Transfer</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Emotional Transfer</h1>
+</header>
+<p>“You know, it is rather quite hard to recreate feelings. It is one
+thing to re-live a situation yourself, to put yourself back into that
+moment that you want to re-experience; trying to immerse yourself fully
+in it to come as close to that happening you found yourself in, years or
+decades ago. Most memories and feelings associated with it become
+distorted and filtered by your own mind over time, for better or for
+worse - who knows. At times, certain classes of psychoachtive substances
+might circumvent some of these filters, designed to keep your mind whole
+and sane. Other times you find yourself even more immersed in the
+experience than you have been at the time of its happening - traumata
+are an excellent example for this.</p>
+<p>“An entirely different thing, however, is to recreate feelings - a
+moment, a situation - in another human being. To transfer, as it were,
+the emotions engendered.</p>
+<p>“You see, emotions are a curious thing: they are not a first class
+entity of experience within the mind - they depend on all the context,
+the history, the setting, your internal state, and so on and so forth.
+This is why we can separate situations from memories or thoughts about
+the future; why we don’t confuse things that happen in this very moment
+with the exact same things, that happened yesterday; why we know, these
+are different events. They <em>feel</em> different. There are times,
+where the part of the mind responsible for this, is confused - a
+phenomenon we call deja-vu, premonition, telepathy, supernatural
+experience; there are many names for it.</p>
+<p>And yet, usually, without the usage of substances or electrical
+currets applied to certain parts of the brain, we cannot induce such
+states of mind, let alone control them to our liking, if we wanted a
+person to live through a certain experience.</p>
+<p>“I have spent the better part of my life, studying experience,
+studying emotions and different states of mind - not academically mind
+you, but practically. Studying the mirror of the universe, that is my
+own subjective mind - for if the fundamental laws of nature are at work
+universally, they can also be found within oneself. And after all these
+years of studying, I have found something truely inspiring. I have found
+a way to accurately transfer emotional states from one being to another.
+And not just a theoretical one, but one, I shall actually, physically
+show you, as a token of gratitude for being unwittingly instrumental in
+my progress.”</p>
+<p>Alaris, a nearly albino, androgynous Aasimar, dressed in simple,
+dark, slightly tattered monks robes gets up from the small stool in the
+corner of the dimly lit room. Their every movement is slow and steady
+but as gracious and intentful as water carving a ravine into granite
+over thousands of years. In the twilight, tattoos of an unsettling,
+arcane design on their face obfuscate the facial features, needed by
+most to judge the emotional state of a person - yet, on the corners of
+their mouth, a slightly excited, yet grounded smile makes for an eerie
+appearance. Alaris walks to a stone alcove on the wall, slowly opening
+and unrolling a leather pouch, making them look like an alchemist,
+carefully preparing for an experiment.</p>
+<p>“Whenever you want to recreate something, and be thorough about it”,
+they continue talking calmly to the other person in the room, “you ought
+to study it in great detail; know, what parts it is made of and how they
+interlink to form the final, complex structure. So what are the most
+basic components of an experience, of an emotion? Following theories
+from a mental discipline called ‘Vipassana’, emotions are the result of
+physical sensations - a slightly contextualized and integrated version
+of our primary - that is physical - perception. According to this
+theory, this integrative process can be quite complex, accounting for
+feelings about emotions and therefore feedback mechanisms. But at its
+core, our sensory apparatus is the doorway to our cognition - so this is
+where I began my studies. How could these pathways be utilized to
+transfer but a simple, yet accurate, emotion? Once this would be
+possible, the rest would be a matter of mathematics.</p>
+<p>“However, I quickly realized, that ‘simple’ emotions are quite rare.
+There is, as it were, no perceptive organ that perceives joy or peace,
+and alas no perceptive organ that would reliably spark these emotions.
+You see, joy and peace are intensly complex emotions - heavily
+contextualized and infinitely feedbacked versions of more basic
+elements. Additionally, it seemed, that more often than not, these
+emotions depended on the absence or ignorance of certain other emotions
+or sensations - it is hard to be joyful if you are hungry for example,
+even if it is not impossible.</p>
+<p>“So I turned my gaze to other aspects of human cognition and soon
+learned a very important lesson, in which you played a crucial part. As
+I started recapitulating our first meeting, I realized, that there is no
+such thing as empathy. Humanoids are mostly incapable of it - safe for
+one very simple, basic emotion. Secondly, by meditation and your
+unwitting hand, I learned, that every perceptive organ can give rise to
+a pethora of sensations and emotions coupled with them, again safe for
+one. And fortunately, this organ, our skin - the organ detecting
+physical touch - is directly coupled with this one emotion: physical
+pain.”</p>
+<p>Alaris turns around, mustering the roughly 40 year old man lying on
+the stone slab in the middle of the room. They remember every inch of
+his face, his slender frame and his tired, almost dead seeming eyes,
+even though their first encounter was more than 25 years ago. Alaris
+scans the crude metal tools filling the opposite wall - they remember
+them of a butchers’ slaughter room - they won’t need them, but they
+certainly add to the flair of the cool underground stone chamber. Alaris
+goes over the scrolls and and fine instruments they brought for the long
+anticipated reunion in their mind; takes stock of what is at their
+disposal. They wait until those other brownish, stale eyes meet their
+own in midst of racing around the room and down the almost naked body
+they belong to. Alaris continues intently, gesturing slowly and playing
+idly, with a finely crafted needlewheel:</p>
+<p>“You see, while physical pain can be part of more complex emotional
+states, and while it is already a contextualized, integrated emotion,
+inflicting pysical pain in a controlled way is the cleanest and shortest
+route to tap into the cognition of any being. Apart from highly mentally
+trained individuals, any sensation of bodily disintegration immediately
+transports a beings cognition to the present moment and, for the most
+part, stops the interfering workings of further contextualization. For a
+moment, a skilled craftsperson can bring itself or another being into a
+desired state that is recreatable in itself and others.</p>
+<p>“Additionally - directly following pain, the first more complex
+emotional state can be reaced quite easily: that of fear or horror.
+Another universal experience that is quite flexible regarding its level
+of contextualization and integration.”</p>
+<p>Alaris inspects the heavy leather belts fixing Noran in place,
+restricting his every move, safe for his eyes. The master artificer who
+crafted the implements for them really knew her metier. The belts adjust
+perfectly and instantly to any size and force they should restrict,
+leaving the subjects as unrestraint as possible, yet as fixed as
+necessary - truly magnificent work, like every detail in this ‘situative
+emotional awareness chamber’, as they like to refer to it. Alaris prides
+themselves for the accurate, detailed procedures performed in here, as
+well as for the rooms themselves: an elegant, perfectly configured, well
+oiled machinery with them as the operator. The scene helps Alaris to get
+into this meditative, disconnected, yet fully integrated, keen state of
+mind, necessary to manufacture detailed, lively experiences for their
+subjects.</p>
+<p>Norans eyes fixate Alaris, and he seems on the cusp of asking a
+question racing in his mind. Alaris can see the tension, the ever so
+slight movements of the well defined throat, the slightly arythmical
+intake of air filling his lungs and lifting his bare chest - but he does
+not find the words. Unfinished, his thoughts race on, his heart beat
+continues arythmically. The sound stuck in his throat, tremors and
+strains in his chest and neck accompany a forced slow exhale that does
+nothing to soothe his mind.</p>
+<p>“I understand you being uneasy”, Alaris continues. “This seems like a
+dark road to go down. How could one recreate pleasant situations and
+emotions of only pain and horror seem at hand.” Alaris soothingly
+touches Norans trembling hand as one would to comfort ones’ old, senile
+grandparents on their death bed.</p>
+<p>“Luckily pure mathematics provide a way out. You see, pain and horror
+form one side of a multidimensional spectrum. Put at its simplest, they
+define the axis of a two dimensional coordinate system, opening up a
+purely mathematical space full of transformations, oscillations and
+calculations. Since, in laypersons terms, physical well being is the
+absence of pain, and bliss the opposite of horror or fear, and since
+humanoid bodies tend to even out extreme conditions, the body itself
+provides us with the perfect framework for situative emotional
+transfers. The look in your eyes tells me you don’t believe me, but
+don’t worry, you soon will.”</p>
+<p>Noran struggles against the belts and tries to get up - marvels of
+engineering holding him firm in place. Alaris gets up from the seat they
+took on the slanted stone slab that keeps Norans lying body at a 30
+degree angle, enough for him to easily see Alaris’ every move, the
+implements and the massive iron door with the spyhole that he does not
+know what lies beyond. He woke up in here hours ago after being snatched
+from the busy market in the middle of the day - hours, days ago?</p>
+<p>Alaris looks over their shoulder while putting together what seems to
+be a dagger holding vials with various odd looking liquids and intricate
+channels connecting these containers to various points on the blade: “I
+will let you in on the little secret - how I found out, one can, in a
+controlled way, invoke one of the most raw and blissful sensations in
+another being. Remeber the night we first met?”</p>
+<p>Alaris looks deep into those stale, nearly unhuman eyes, looking for
+but a hint of recognition - nothing.</p>
+<p>“I remeber it vividly. I was on my way home from a wonderful evening,
+taking delight in a magnificient play. Unexpectedly I met friends I had
+not seen in a while, exchanged pleasantries and shared some drinks with
+them. Undoubtedly my trip home took place in the blissful aftermath of a
+joyous evening.”</p>
+<p>The dagger now put together, Alaris turns around, carefully holding
+it by the blade, taking slow intentful steps to the stone slab which
+started to tilt ever so slightly to a more horizontal position, a couple
+of inches higher than Alaris’ hip. The movement sends shivers down
+Noran, his eyes wide open, seemingly trying to escape his skull at the
+sight of the blade and the undying smile of his opposite - speech has
+still forsaken him.</p>
+<p>“I had just boarded one of the boats and taken a seat next to other
+fellow travellers. Honestly: I did not realize you joining our company
+at first, taking a seat opposite of my own. I was, as those three
+others, preoccupied with reading and daydreaming. It must have been a
+solid five minutes before I realized, something about the atmosphere had
+changed. You surely know the eerie feeling when eyes seem to pierce you,
+look into your very being. The moment I saw your eyes fixing me there,
+opposite you - your blank lustful stare - that moment my heart started
+to race as yours does now. My lungs refused to operate calmly and
+regularly and my knees and hands were hard to keep from trembling, just
+as yours are now.”</p>
+<p>Alaris fixes Norans eyes - still just a blank stare of fear; nothing;
+no recognition. Alaris mutters three words in an ancient language,
+calmly draws an encantation with their left hand in front of their face.
+At once, Norans left hand is under their complete and utter control, the
+realization of which widens Norans eyes even wider. Simultaneously, the
+tattoos on Alaris face fade and their face and appearance shift to a
+more female looking, younger version of theirself. There it is - spasms
+on Norans face tell Alaris, that their opposite starts to recognize in
+whos hands he finds himself. Muscles tense, his face shifts through
+various emotions; lust; guilt; and finally settles on terror, tears
+start welling up on his face, his throat tightens so much, no sound
+escapes. Alaris places the grip of the dagger in Norans hand and
+mentally clutches it firmly. The belt holding the left arm losens, as
+Alaris moves Norans hand to his right thigh by pure will power, the
+blade just barely scratching the skin on its way there.</p>
+<p>“After I saw your eyes, and quickly studied your appearance, already
+in fear, I could not take my eyes from your left hand stroking your
+thigh, not unlike right now, concealed just enough by a backpack, so our
+fellow travellers were none the wiser - yet, you chose, I should know.
+And just in the moment I wanted to take some action against this
+repellent situation, you skillfully silenced me by faintly touching my
+foot with your own. I was, just as you are now, rendered a passive
+observer within my own body, helplessly watching you still your perverse
+satisfaction.”</p>
+<p>Noran now sobbing from fear still tries to struggle against the
+belts. With another movement of the hand, Alaris young, feminine
+appearance changed back to the uncanny, arcanely tattooed form of their
+current self. They could feel anger rushing thorugh their veins, but
+quickly swich back to their calm, meditative flow, not for a second
+losing their ever so slight smile.</p>
+<p>“You should know as well as I do, what happened afterwards; suffice
+it to say - you broke me that night. I could be furious about this,
+would I not be thankful for what it taught me - and this will always be
+our little secret.”</p>
+<p>Alaris pushes the three vials slightly further into their
+compartments in the grip of the dagger, the liquids quickly fill the
+channels without forming drops on the blade. Mentally, Alaris starts
+increasing the preassure of Norans own hand against his own thigh, right
+where it pleasured him so immensly 25 years ago. Not inch by inch,
+micrometer by micrometer the blade starts pushing into the thigh.</p>
+<p>“You see, I found, after coming to terms and analyzing what had
+happened that night, that this evening as a whole was not so very much
+different from what one experiences in sexual orgasm; just slowed by
+some extreme factor. The orgeastic sensation really is nothing but a
+rapid oscillation of extreme bliss and an extreme perversion of pain. It
+really is impossible to tell whether a face is in pain or in orgeastic
+joy - you couldn’t categorize it for yourself. Your hole body
+simultaneously contracts and relaxes as your heart rate and breath grows
+increasigly fast and arythmical.” The blade pushes slowly but steadily
+further into his leg, an ever so slight drop of blood forms at the
+incision, the skin hisses slightly as if burned, as the first channel
+touches it. Norans voice starts coming back as a pressed cry, which is
+quickly hushed by a localized silence spell cast on his throat.</p>
+<p>“For every extreme, the body automatically compensates with another
+extreme. Just like that, situational emotion transfer becomes but a
+matter of pain, fear and timing. And you, my lucky friend, you are in
+for a real treat:”</p>
+<p>Alaris, momentarily stepped away, comes back to the table with two
+metal rods not unlike the ones used with Tesla coils catching lightning
+in some of the larger cities. “Tonight, and in the following weeks, we
+shall see, how intense oscillation of pain and its absence, the bodily
+compensatory mechanisms, and precise timing result in the spiritual
+cleansing or awakening of a broken mind. You my friend, will not take 25
+years, to learn what I have - quite literally - painstakingly pieced
+together over decades. Life is pain, but once we are done, you will
+grasp how to take delight in it…”</p>
+<p>Noran, by Alaris will pushes the blade further in, feeling
+consciousness slip, right before a searing current thorugh his spine
+brings it back and contracts every muscle in his body. Neither
+unconsciousness nor death are a way out. There is no way out. Alaris
+uncannily smiles and continues their mentally transformative, skillful
+emotional transfer …</p>
+<p><em>Story, DnD, Psychological Horror, Body Horror</em></p>
+</body>
+</html>

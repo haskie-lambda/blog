@@ -1,0 +1,196 @@
+<html disabled>
+  <head disabled>
+    <style disabled>
+body {
+  color:white;
+  width:100%;
+  max-height:100%;
+  overflow-x: hidden;
+}
+
+heading {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.4em;
+  font-size: 4em;
+  font-family: courier;
+  color: #222222;
+  text-align: center;
+  width: 90%;
+}
+
+search {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  height: 8em;
+  width: 90%;
+}
+
+input {
+  display: flex;
+  margin: auto;
+  width: 100%;
+  border: 0px;
+  border-bottom: 2px solid #222222 ;
+  font-family: courier;
+  font-size: 4rem;
+  outline: none;
+}
+
+listing {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 90%;
+  background-color: #EEEEEE;
+  overflow-x: hidden;
+}
+
+entry {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  padding: 5px;
+  padding-left: 2%;
+  padding-right: 5%;
+  font-family: courier;
+  font-size: 3rem;
+  color: #222222;
+  border-bottom: 1px dashed #222222;
+}
+
+entry a {
+  color: #db00c3;
+  text-decoration: none;
+  width: fit-content;
+}
+
+entry a:visited {
+  color: #222222;
+  text-decoration: none;
+}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body disabled>
+    <heading disabled>Echo Chamber</heading>
+    <search disabled><input autofocus type="text" value=""/></search>
+    <listing disabled/>
+    <script disabled>
+      var articles=[ { "path": "articles/mirror-universe.md.html", "title": "Mirror Universe" }
+                   , { "path": "articles/death-metal_der-soundtrack-kalis.md.html", "title": "Death Metal - der Soundtrack Kalis" }
+                   , { "path": "articles/bundestrojaner-stoppen.md.html", "title": "Bundestrojaner stoppen - die IT hats in der Hand" }
+                   , { "path": "articles/were-all-born-naked.md.html", "title": "We're all born naked..." }
+                   , { "path": "articles/obsession-mit-realitaet.md.html", "title": "Obsession mit \"Realität\"" }
+                   , { "path": "articles/leserinnenbrief-plattform-fuer-rassismus.md.html", "title": "Leser:innenbrief an ORF: DAS GESPRÄCH - Plattform für Rassismus?" }
+                   , { "path": "articles/emotional-transfer.md.html", "title": "Emotional Transfer" }
+                   , { "path": "articles/dr-weg.md.html", "title": "dr weg" }
+                   , { "path": "articles/niemand-will-oesterreich-verteidigen_zurecht.md.html", "title": "Niemand will Österreich verteidigen - zurecht." }
+                   , { "path": "articles/dreams-and-wishes-of-a-shapeshifter.md.html", "title": "Dreams and Wishes of a Shapeshifter" }
+                   , { "path": "articles/the-towers.md.html", "title": "The Towers" }
+                   , { "path": "articles/on-animal-needs.md.html", "title": "On Animal needs" }
+                   , { "path": "articles/stille-nacht.md.html", "title":  "stille nacht" }
+                   , { "path": "articles/episodes.md.html", "title": "Episodes" }
+                   , { "path": "about.md.html", "title": "About „Echo Chamber“" }
+                   ];
+      var selected=articles;
+      var selection=0;
+
+      function selectArticle(selection){
+        $("entry").css("background-color", "#EEEEEE");
+        $("entry").prop("selected", false);
+        const el=$("entry[path=\""+selected[selection].path+"\"");
+        el.css("background-color", "#EEEEFF");
+        el.prop("selected", true);
+        $([document.documentElement, document.body]).animate({
+            scrollTop: el.offset().top - $("listing").offset().top
+        }, 100);
+      }
+
+      function createEntry(article){
+        const origTitle = article.title;
+        const el = document.createElement("entry");
+        const link = document.createElement("a");
+        link.innerText = article.title;
+        link.href = article.path;
+        el.append(link);
+        el.setAttribute("path", article.path);
+        async function f() {
+          while(true){
+            await new Promise(resolve => setTimeout(resolve, 400));
+            if ($(link).width() + 10 > $("listing").width() && $(el).prop("selected")) {
+              $(link).text((i, t) => t.substring(1));
+            } else if ($(link).text()!=origTitle){
+              $(link).text(origTitle);
+            }
+          }
+        }
+        f();
+        return el;
+      }
+
+      function updateListing(listing, articles) {
+         listing.empty();
+         articles.forEach(async (article) => {
+           $("listing").append(createEntry(article));
+         });
+        if(articles.length>0) selectArticle(selection);
+        $("input").focus();
+      }
+
+      function filterListing(listing, filterText) {
+        if(filterText != "") {
+          const rgx = new RegExp(String.raw`${filterText}`, filterText==filterText.toLowerCase()?"i":"");
+          selected = articles.filter((article) => article.title.match(rgx));
+        } else {
+          selected = articles;
+        }
+        updateListing(listing, selected);
+        if(selected.length > 0) {
+          if(selection >= selected.length) selection = selected.length-1;
+          selectArticle(selection);
+      }
+        $("input").focus();
+      }
+
+      $(document).ready(() => {
+        updateListing($("listing"), articles);
+        selectArticle(selection);
+        $("input").val("");
+        $("input").focus();
+      });
+      
+      $("input").keydown(function(e) {
+        var code = (e.keyCode ? e.keyCode : e.which);
+
+        // selection handling
+        var cont = false;
+        if (code == 38) {
+            if(--selection<0) selection=0;
+            cont = true;
+        } else if (code == 40) {
+            if(++selection>=selected.length) selection=selected.length-1;
+            cont = true;
+        } else if (code == 13) {
+            var path = selected[selection].path;
+            if(e.shiftKey) { window.open(path); }
+            else           { window.location.href = path; }
+        }
+        if(cont) {
+            selectArticle(selection);
+            e.stopPropagation();
+            return false;
+        }
+      });
+      $("input").on("input", function() {
+        // filter handling
+        filterListing($("listing"), $( this ).val());
+      });
+      $("input").focus();
+    </script>
+  </body>
+</html>

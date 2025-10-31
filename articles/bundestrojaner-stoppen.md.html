@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <style disabled>
+body {
+  max-width: 500px;
+  margin: auto;
+  margin-top: 2em;
+  padding: 1em;
+  text-align: justify;
+}
+h1 h2 h3 h4 {
+  font-family: courier;
+}
+    </style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Bundestrojaner stoppen - die IT hats in der Hand</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Bundestrojaner stoppen - die IT hats in der Hand</h1>
+</header>
+<p>Zu viele Diskussionen mit den Themen Überwachung und Verschlüsselung
+enden mit einem “… aber ich habe ja nichts zu verbergen”. Menschen in
+der Software-Branche wissen jedoch, dass dieses Argument das Thema
+verfehlt. Vor ein paar Wochen war ich wieder einmal froh Kolleg:innen zu
+haben, die es nicht hinnehmen würden, wenn ihre Softwarefirma sich
+irgendwie am geplanten Bundestrojaner beteiligen sollte. Für die Meisten
+von uns sind das Eintreten für Privacy und die Opposition gegen <a
+href="https://epicenter.works/content/chatkontrolle-massenueberwachung-getarnt-als-kinderschutz">das
+Aushebeln von Ende-zu-Ende-Verschlüsselung</a>, gegen <a
+href="https://epicenter.works/content/innenstadtueberwachung-mit-echtzeitzugriff-der-polizei-1">großflächige
+Überwachung</a> und gegen den <a
+href="https://epicenter.works/content/bundestrojaner-beschlossen-und-jetzt">Bundestrojaner</a>
+klare, unverhandelbare Positionen.</p>
+<p>Was also tun? <a href="https://epicenter.works">Epicenter.Works</a>
+zu unterstützen und unser Umfeld aufzuklären, ist ein guter Start - aber
+das allein wird ein beschlossenes (!) Gesetz oder eine EU-Verordnung
+nicht kippen. Kolleg:innen haben in den Raum gestellt zu kündigen,
+sollte sich ihre Firma ihren Einstellungen zuwiderhandeln. Das ist
+sicher für manche ein Weg, aber es gibt einen besseren.</p>
+<p>Am <a
+href="https://www.gpa.at/kollektivvertrag/information-und-consulting/it/2026/fair-play-_-fair-pay">14.
+November starten dieses Jahr die IT-Kollektivvertragsverhandlungen</a>.
+Die GPA erstreitet hier die kollektivvertragliche Inflationsanpassung
+der Gehälter. Zu diesem Zweck hat die <a
+href="https://survey.gewerkschaften-online.at/index.php/861388?newtest=Y&amp;lang=de-informal">GPA
+einen Fragebogen zur Stimmung in der IT-Branche</a> verschickt. Darin
+fallen zwei Fragen auf:</p>
+<ul class="incremental">
+<li>Bist du bereit, dich aktiv für einen Abschluss zu engagieren, sollte
+es bei den Verhandlungen zu Schwierigkeiten kommen?
+<ul class="incremental">
+<li>Ja</li>
+<li>Nein</li>
+<li>Enthaltung</li>
+</ul></li>
+<li>[Wenn ja,] Was bist du bereit zu tun, sollte es bei den
+Verhandlungen zu Schwierigkeiten kommen?
+<ul class="incremental">
+<li>Ich würde an Betriebsversammlungen zum Protest teilnehmen.</li>
+<li>Ich würde an einer Demonstration teilnehmen.</li>
+<li>Ich würde an einem Warnstreik (kurzer Streik) teilnehmen.</li>
+<li>Ich würde auch länger streiken, bis die Arbeitgeber:innen-Seite
+einlenkt.</li>
+</ul></li>
+</ul>
+<p>Anstatt zu resignieren, zu kündigen und damit die Arbeitskolleg:innen
+zu verlieren oder darauf zu hoffen, dass sich “alles zum Guten wenden
+wird” ist es an der Zeit, dass wir – Software Entwickler:innen,
+Architekt:innen, Data Scientists &amp; Engineers, etc. – für unsere
+Ideale einstehen. Wir nutzen nicht Signal, VPNs, Tracking-Blocker und
+Co. um dann von der EU oder Österreich doch noch überwacht zu werden.
+<strong>Der Rückzug des Bundestrojaner-Beschlusses und der Stopp der
+Innenstadtüberwachung müssen unverhandelbare Forderungen bei den
+KV-Verhandlungen sein.</strong></p>
+<p>Wer glaubt, dass das nicht die richtige Bühne ist: <a
+href="https://linkswende.org/generalstreik-fuer-palaestina-legt-italien-lahm/">Italienische
+und griechische Gewerkschaften haben es uns kürzlich mit Forderungen
+nach einem Stopp von Waffenlieferungen vorgemacht</a>. Wir müssen uns
+unserer Macht bewusst werden: Wenn Rechenzentren nicht mehr laufen, im
+IT-Support niemand erreichbar ist, Bugs nicht gefixed werden und
+Plattformen nicht funktionieren weil wir streiken, gibt es auch
+niemanden sonst der das alles bedienen kann. Wenn Vorstandsgehälter und
+digitale Infrastruktur gefährdet sind, können sich die Mühlen der
+Politik plötzlich sehr schnell drehen.</p>
+<p>Als diejenigen, die verstehen, was hier auf dem Spiel steht - nämlich
+nichts Geringeres als unsere Privatsphäre und unsere Freiheit – haben
+wir die Pflicht jede Chance zu nutzen, um uns und unser Umfeld vor
+Palantir und anderen Datenkraken zu schützen. IT ist Politik und hat
+direkte Auswirkungen auf jeden unserer Lebensbereiche.</p>
+<p><strong>Sprecht mit euren Kolleg:innen und euren Betriebsrät:innen
+darüber, <a href="mailto:service@gpa.at">**schreibt Mails</a> an die
+GPA, organisiert euch. Die GPA muss den Rückzug des
+Bundestrojaner-Beschlusses und den Stopp der Innenstadtüberwachung
+fordern. Nicht nach dem Motto “Fair Play, FAIR PAY”. Überwachung und
+ausgehebelte Verschlüsselung sind nicht “Fair”. Verhandeln wir
+stattdessen nach dem Motto “Sie spionieren, Wir blockieren – Für
+Privatsphäre und faire Löhne!”.</strong></p>
+<p><strong>Wenn ihr mehr machen wollt, meldet euch bei <a
+href="mailto:it-against-surveillance@proton.me">**it-against-surveillance@proton.me</a>.
+Bauen wir informierten, zivilgesellschaftlichen Widerstand gegen
+Überwachung auf.</strong></p>
+<hr />
+<p><strong>Nachtrag: Beispielmail</strong></p>
+<blockquote>
+<p>Guten Tag,</p>
+<p>mit Blick auf die IT-KV-Verhandlungen 2026 möchte ich als
+Gewerkschaftsmitglied meine Meinung einbringen.</p>
+<p>Das Eintreten für Privacy und die Opposition gegen das Aushebeln von
+Ende-zu-Ende-Verschlüsselung <a
+href="https://epicenter.works/content/chatkontrolle-massenueberwachung-getarnt-als-kinderschutz">1</a>,
+gegen großflächige Überwachung <a
+href="https://epicenter.works/content/innenstadtueberwachung-mit-echtzeitzugriff-der-polizei-1">2</a>
+und gegen den Bundestrojaner <a
+href="https://epicenter.works/content/bundestrojaner-beschlossen-und-jetzt">3</a>
+sind für alle die ich in der IT-Branche kenne, klare, unverhandelbare
+Positionen.</p>
+<p>Im Sinne einer Interessensvertretung ist also die Zeit gekommen,
+politische Forderungen in diese “partnerschaftlichen” Verhandlungen
+aufzunehmen. Die GPA muss bei den KV-Verhandlungen den Rückzug des
+Bundestrojaner-Beschlusses und den Stopp der Innenstadtüberwachung
+fordern. Selbst wenn sich ausschließlich für eine bessere
+Inflationsabdeckung keine Streiks organisieren lassen, bin ich der
+vollen Überzeugung, dass Streiks für diese Positionen auf breite
+Unterstützung in den Belegschaften treffen werden.</p>
+<p>IT ist Politik, die jeden unserer Lebensbereiche betrifft - auch die
+der restlichen Arbeiter:innenklasse. Wir nutzen Verschlüsselung, Signal
+und VPNs weil wir wissen wie gefährlich Überwachung ist. Wir werden
+nicht dabei helfen ein Überwachungsregime aufzubauen.</p>
+<p>Die IT - und insbesondere die GPA - hat es jetzt in der Hand, echte
+Sozialpolitik zu machen. Denn Überwachung und Aufbrechen von
+Verschlüsselung sind nicht “Fair Play”, das ist ein Angriff auf die
+Arbeiter:innenklasse, der genauso beantwortet werden muss. Wenn Staat
+und EU spionieren, wird die IT blockieren. Das ist
+Interessensvertretung.</p>
+<p>Freundliche Grüße</p>
+</blockquote>
+</body>
+</html>
