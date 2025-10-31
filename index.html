@@ -1,0 +1,136 @@
+<html disabled>
+  <head disabled>
+    <style disabled>
+body {
+  color:white;
+  width:100%;
+  height:100%;
+  overflow: hidden;
+}
+
+input{
+  display: flex;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 20px;
+  width: 90%;
+  top: 20%;
+  border: 0px;
+  border-bottom: 2px solid #222222 ;
+  font-family: courier;
+  font-size: 4rem;
+  outline: none;
+}
+
+listing {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 90%;
+  background-color: #EEEEEE;
+  overflow: hidden;
+}
+
+entry {
+  display: flex;
+  margin-top: 5px;
+  padding: 5px;
+  padding-left: 2%;
+  font-family: courier;
+  font-size: 3rem;
+  color: #222222;
+  border-bottom: 1px dashed #222222
+}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body disabled>
+    <input autofocus type="text" value=""/>
+    <listing disabled/>
+    <script disabled>
+      var articles=[ { "path": "articles/death-metal.html", "title": "Death Metal - der Soundtrack Kalis", "tags": ["tag1", "tag2"] }
+                   , { "path": "articles/verteidigen.html", "title": "Niemand will Österreich verteidigen - zurecht.", "tags": ["tag2", "tag3"] }
+                   , { "path": "articles/plattform-fuer-rassismus.html", "title": "Leser:innenbrief an ORF: DAS GESPRÄCH - Plattform für Rassismus?", "tags": ["tag2", "tag3"] }
+                   , { "path": "articles/animal-needs.html", "title": "On Animal needs", "tags": ["tag2", "tag3"] }
+                   ];
+      var selected=articles;
+      var selection=0;
+
+      function selectArticle(selection){
+        console.log("selecting ", selection, selected[selection].path);
+        $("entry").css("background-color", "#EEEEEE");
+        $("entry[path=\""+selected[selection].path+"\"").css("background-color", "#EEEEFF");
+      }
+
+      function createEntry(article){
+           var el = document.createElement("entry");
+           el.innerText = article.title;
+           el.setAttribute("path", article.path);
+           return el;
+      }
+
+      function updateListing(listing, articles) {
+         listing.empty();
+         articles.forEach(async (article) => {
+           $("listing").append(createEntry(article));
+         });
+        if(articles.length>0) selectArticle(selection);
+        $("input").focus();
+      }
+
+      function filterListing(listing, filterText) {
+        console.log("t: ", filterText);
+        if(filterText != "") {
+          selected = articles.filter((article) => article.title.match(filterText));
+        } else {
+          selected = articles;
+        }
+        console.log("sel: ", selected);
+        updateListing(listing, selected);
+        if(selected.length > 0) {
+          console.log("updated");
+          if(selection >= selected.length) selection = selected.length-1;
+          console.log("newselection: ", selection);
+          selectArticle(selection);
+          console.log("selected");
+      }
+        $("input").focus();
+      }
+
+      $(document).ready(() => {
+        updateListing($("listing"), articles);
+        selectArticle(selection);
+        $("input").val("");
+        $("input").focus();
+      });
+      
+      $("input").keydown(function(e) {
+        var code = (e.keyCode ? e.keyCode : e.which);
+
+        // selection handling
+        var cont = false;
+        if (code == 38) {
+            if(--selection<0) selection=0;
+            cont = true;
+        } else if (code == 40) {
+            if(++selection>=selected.length) selection=selected.length-1;
+            cont = true;
+        } else if (code == 13) {
+            var path = selected[selection].path;
+            if(e.shiftKey) { window.open(path); }
+            else           { window.location.href = path; }
+        }
+        if(cont) {
+            selectArticle(selection);
+            e.stopPropagation();
+            return false;
+        }
+      });
+      $("input").on("input", function() {
+        // filter handling
+        filterListing($("listing"), $( this ).val());
+      });
+      $("input").focus();
+    </script>
+  </body>
+</html>
